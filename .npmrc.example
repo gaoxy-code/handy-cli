@@ -1,0 +1,11 @@
+# このファイルを .npmrc にコピーして使う（.npmrc は gitignore 済み）
+#   cp .npmrc.example .npmrc
+#
+# トークンは直書きせず、環境変数 GITHUB_TOKEN で渡す:
+#   GITHUB_TOKEN=ghp_xxxx npm publish
+#
+# publish 側: PAT (classic) に write:packages スコープが必要
+# install 側: read:packages スコープが必要
+
+@gaoxy-code:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}

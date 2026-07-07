@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.npmrc
+*.tgz
+.DS_Store
+
+# 学習用ドキュメント（ローカル専用・公開リポに含めない）
+PLAN.md
+STEP.md
