@@ -1,15 +1,10 @@
 # @gaoxy-code/handy-cli
 
-定番ミニ実用ツールを集めた CLI。TypeScript + tsup + commander で作った CLI を GitHub Packages (npm) に publish する学習プロジェクト。
+定番ミニ実用ツールを集めた CLI（TypeScript + tsup + commander）。GitHub Packages (npm) で公開している。
 
-## インストール
+## インストール / アップデート
 
-GitHub Packages からインストールするため、`.npmrc` に以下を設定する（`read:packages` スコープのトークンが必要）:
-
-```
-@gaoxy-code:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
-```
+GitHub Packages からの取得にはトークン設定が必要。手順は **[docs/INSTALL.md](docs/INSTALL.md)** を参照。
 
 ```bash
 npm install -g @gaoxy-code/handy-cli
@@ -35,23 +30,15 @@ npm install
 npm run build        # tsup で dist/cli.js を生成
 node dist/cli.js -h  # ローカル実行
 
-npm link             # グローバルに handy コマンドをリンク
-handy version
+npm link             # グローバルに handy コマンドをリンクして試す
 npm unlink -g @gaoxy-code/handy-cli  # 後片付け
 ```
 
-## publish（手動）
+## リリース
+
+`v*` タグの push で GitHub Actions が自動 publish する。手順は **[docs/RELEASE.md](docs/RELEASE.md)** を参照。
 
 ```bash
-cp .npmrc.example .npmrc
-GITHUB_TOKEN=<write:packages の PAT> npm publish
-```
-
-## publish（CI）
-
-`v*` タグを push すると GitHub Actions が publish する:
-
-```bash
-npm version patch          # package.json の version を上げてタグ作成
+npm version patch
 git push origin main --follow-tags
 ```
