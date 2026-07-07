@@ -1,6 +1,6 @@
 {
   "name": "@gaoxy-code/handy-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Handy mini CLI tools (version / uuid / slug) - GitHub Packages publish study",
   "type": "module",
   "bin": {
